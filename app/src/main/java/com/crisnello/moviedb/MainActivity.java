@@ -3,6 +3,7 @@ package com.crisnello.moviedb;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -15,10 +16,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.crisnello.moviedb.config.Config;
 import com.crisnello.moviedb.dao.MoviedbFirebase;
+import com.crisnello.moviedb.entitie.Movie;
 import com.crisnello.moviedb.entitie.Usuario;
+import com.crisnello.moviedb.util.AdapterListView;
+import com.crisnello.moviedb.util.Internet;
 import com.crisnello.moviedb.util.Util;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -31,12 +38,19 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.StorageReference;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.loopj.android.image.SmartImageView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener ,  AdapterView.OnItemClickListener {
 
     private static final String TAG = "MainActivity";
+
+    private ArrayList<Movie> movies = new ArrayList<Movie>();
 
     private SmartImageView smartImage;
     private String faceId;
@@ -46,9 +60,15 @@ public class MainActivity extends AppCompatActivity
 
     private Util myUtil;
 
+    private ListView listaDeEventos;
+    private AdapterListView adapterListView;
+    private ArrayList<Movie> itens;
+
     private DatabaseReference refUsuario;
 
     private StorageReference storageProfile;
+
+    private int page ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +96,9 @@ public class MainActivity extends AppCompatActivity
         tv_login.setText(user.getEmail());
 
         smartImage = (SmartImageView) navigationViewHeader.findViewById(R.id.meuSmartImage);
+
+        listaDeEventos = (ListView) findViewById(R.id.lista);
+        listaDeEventos.setOnItemClickListener(this);
 
 //        faceId = getIntent().getStringExtra("FACEID");
 //        try {
@@ -161,6 +184,56 @@ public class MainActivity extends AppCompatActivity
             e.printStackTrace();
         }
 
+        page = 1;
+        updateMovies();
+    }
+
+
+    private void updateMovies(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                HashMap<String, String> hash = new HashMap<String, String>();
+                hash.put("api_key", Config.api_key);
+                hash.put("language", "en-US");
+                hash.put("page", String.valueOf(page));
+                //mandar language = en-US
+                //page init with 1 until total_pages
+                //20 per page
+
+                String respJson = Internet.postHttp(Config.WS_URL_MOVIE_UPCOMING, hash);
+                Log.i("Resp Movies", respJson);
+
+                movies = new Gson().fromJson(respJson,  new TypeToken<ArrayList<Movie>>(){}.getType());
+
+                for(Movie movie : movies) {
+                    Log.i(TAG, movie.getTitle() + " - " + movie.getPoster_path());
+                }
+                itens = movies;
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            createListView();
+                        }catch(Exception e){
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        }).start();
+    }
+
+    private void createListView()
+    {
+        adapterListView = new AdapterListView(this, itens);
+        listaDeEventos.setAdapter(adapterListView);
+        listaDeEventos.setCacheColorHint(Color.TRANSPARENT);
+    }
+
+    public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3)
+    {
+        Movie item = adapterListView.getItem(arg2);
 
     }
 

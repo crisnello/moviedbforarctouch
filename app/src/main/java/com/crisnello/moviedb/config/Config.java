@@ -26,10 +26,18 @@ package com.crisnello.moviedb.config;
         public final static String WS_URL_LOGIN = WS_SERVER_USADO+"/api/login.jsf";
         public final static String WS_URL_ADD_USER = WS_SERVER_USADO+"/api/usuarioAdd.jsf";
 
+//        https://api.themoviedb.org/3/movie/upcoming?api_key=1f54bd990f1cdfb230adb312546d765d&language=pt-BR&page=1
+
+        public final static String WS_URL_MOVIE_UPCOMING = "https://api.themoviedb.org/3/movie/upcoming";
+
         public final static String WS_PATH_URL = "api/";
         public final static String WS_FILE_PATH="system/file/";
 
         public final static String WS_PROFILE_PICTURE_SIZE="cadastro/200x200/";
+
+        public static final String api_key = "1f54bd990f1cdfb230adb312546d765d";
+
+        public static final String request_token = "7d3cbe1bf355efcaac33ccaa6c3e72ade698c6d0";
 
 
     }
