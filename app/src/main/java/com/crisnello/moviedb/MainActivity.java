@@ -42,6 +42,10 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.image.SmartImageView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -195,20 +199,30 @@ public class MainActivity extends AppCompatActivity
             public void run() {
                 HashMap<String, String> hash = new HashMap<String, String>();
                 hash.put("api_key", Config.api_key);
-                hash.put("language", "en-US");
+//                hash.put("language", "en-US");
+                hash.put("language", "pt-BR");
                 hash.put("page", String.valueOf(page));
-                //mandar language = en-US
+
                 //page init with 1 until total_pages
                 //20 per page
 
                 String respJson = Internet.postHttp(Config.WS_URL_MOVIE_UPCOMING, hash);
                 Log.i("Resp Movies", respJson);
 
-                movies = new Gson().fromJson(respJson,  new TypeToken<ArrayList<Movie>>(){}.getType());
+                try {
+                    JSONObject jsonObject = new JSONObject(respJson);
+                    JSONArray results = jsonObject.getJSONArray("results");
 
-                for(Movie movie : movies) {
-                    Log.i(TAG, movie.getTitle() + " - " + movie.getPoster_path());
+                    movies = new Gson().fromJson(results.toString(),  new TypeToken<ArrayList<Movie>>(){}.getType());
+
+                }catch(JSONException jsone){
+                    jsone.printStackTrace();
                 }
+
+//                for(Movie movie : movies) {
+//                    Log.i(TAG, movie.getTitle() + " - " + movie.getPoster_path());
+//                }
+
                 itens = movies;
                 runOnUiThread(new Runnable() {
                     @Override
@@ -220,6 +234,7 @@ public class MainActivity extends AppCompatActivity
                         }
                     }
                 });
+
             }
         }).start();
     }

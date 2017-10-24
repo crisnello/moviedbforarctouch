@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView3"
+        <com.loopj.android.image.SmartImageView
+            android:id="@+id/img_movie"
             android:layout_width="77dp"
             android:layout_height="77dp"
             android:layout_alignBottom="@+id/text"

@@ -48,17 +48,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Criar uma conta"
+                android:text="Para Criar uma conta"
                 android:textAllCaps="true"
-                android:textColor="@color/colorTitulo"
+                android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
 
             <ImageView
+                android:visibility="gone"
                 android:id="@+id/img_cad_facebook"
                 android:layout_width="wrap_content"
                 android:layout_height="61dp"
-
-
                 android:layout_marginTop="10dp"
                 app:srcCompat="@drawable/cadastrar_com_facebook" />
 
@@ -66,9 +65,9 @@
                 android:id="@+id/txt_titulo2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="OU PREENCHA O FORMULÁRIO"
+                android:text="PREENCHA O FORMULÁRIO"
                 android:textAllCaps="true"
-                android:textColor="@color/colorTitulo"
+                android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
 
             <android.support.design.widget.TextInputLayout

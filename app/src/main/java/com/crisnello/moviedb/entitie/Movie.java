@@ -22,6 +22,11 @@ public class Movie implements Serializable {
 
     private String release_date;
 
+    @Override
+    public String toString() {
+        return getTitle() + " " + getRelease_date();
+    }
+
     public long getId() {
         return id;
     }

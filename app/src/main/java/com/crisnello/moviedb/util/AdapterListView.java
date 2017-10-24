@@ -8,7 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.crisnello.moviedb.R;
+import com.crisnello.moviedb.config.Config;
 import com.crisnello.moviedb.entitie.Movie;
+import com.loopj.android.image.SmartImageView;
 
 import java.util.ArrayList;
 
@@ -52,6 +54,8 @@ public class AdapterListView extends BaseAdapter
         view = mInflater.inflate(R.layout.movie_listview, null);
 
         ((TextView) view.findViewById(R.id.text)).setText(item.toString());
+
+        ((SmartImageView) view.findViewById(R.id.img_movie)).setImageUrl(Config.WS_URL_IMG_PATH+item.getPoster_path());
 
 
         return view;
