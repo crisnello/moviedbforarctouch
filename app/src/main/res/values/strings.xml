@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Moviedb</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="msg_moviedb">Moviedb Informa</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="not_connected">"Você não está conectado na internet, efetue a conexão e tente novamente!"</string>
+
+    <string name="wait_login">Aguarde ...</string>
+
+    <string name="login_success">Login realiado com sucesso!</string>
+
+    <string name="redirect_cad_user">Complete seu cadastro</string>
+
+    <string name="error_cad_incorrect">Erro ao efetuar o cadastro do usuário</string>
+
+    <string name="error_invalid_sexo">Sexo inválido ou não selecionado</string>
+
+    <string name="error_img_profile">Não foi possível salvar a imagem do usuário.</string>
+
+    <string name="error_invalid_email">Email inválido</string>
+    <string name="error_invalid_password">Senha inválida, escolha uma senha com no minímo 6 caracteres</string>
+    <string name="error_small_password">Senha inválida</string>
+    <string name="error_password_notequal">As senhas não correspondem</string>
+    <string name="error_incorrect_password">Senha ou Email está incorreto</string>
+    <string name="error_incorrect_password_or_user">Usuário ou senha inválido.</string>
+
+    <string name="error_user_notexist">Usuário não existe em Firebase .</string>
+
+    <string name="error_incorrect_credential">Este email foi criado com o Facebook, para utiliza-lo com senha, utilize o esqueci minha senha para setar a credencial correta!</string>
+    <string name="error_small_credential">Use o Facebook ou troque para senha utilizando esqueci minha senha</string>
+
+    <string name="error_field_fone">Digite o telefone com DDD = 2 dígitos + Fone com 9 dígitos</string>
+
+    <string name="error_field_required">Campo obrigatório</string>
+    <string name="error_invalid_date">Data de nascimento inválida</string>
+
+    <string name="error_collision_user">Esse email já está cadastrado no Firebase.</string>
+    <string name="error_duplicate_user">Esse email já existe.</string>
+
+    <string name="msg_auth_user">Autenticação criada.</string>
+    <string name="msg_create_user">Usuário criado.</string>
+    <string name="msg_insert_user">Usuário cadastrado com sucesso.</string>
+    <string name="msg_to_out">Para fechar use o sair do menu.</string>
+
+    <string name="msg_cad_complete">COMPLEMENTE SEU CADASTRO</string>
+
+    <string name="success_email_reset">Email enviado com sucesso!</string>
+
+    <string name="error_email_reset">Não há registro de usuário correspondente a esse identificador.</string>
+    <string name="user_email_removed"> O usuário pode ter sido excluído. </string>
+
+
+    <string name="facebook_app_id">2023811804496889</string>
+    <string name="fb_login_protocol_scheme">fb2023811804496889</string>
+
+
+    <string name="title_activity_cadastrar_conta">CadastrarContaActivity</string>
+
+    <string name="error_auth_facebook">Se você trocou a senha do seu usuário, entre com o Email/Senha</string>
+
+    <string name="user_removed">Conta de usuário deletada.</string>
+
+    <string name="usuario">usuario</string>
+
+    <string name="ref_from_url">gs://moviedb-for-arctouch.appspot.com/</string>
+
+    <string name="img_extension">.jpg</string>
+
+    <string name="dir_img_profile">profile/</string>
+
+
+</resources>

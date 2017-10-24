@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo"
+    tools:context="com.crisnello.moviedb.MostrarNotificationActivity"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="53dp"
+            android:layout_height="85dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/ic_laucher"
+            android:layout_weight="0.07" />
+
+        <TextView
+            android:id="@+id/txt_push_message"
+            android:layout_width="286dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:text="oi"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="26dp" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="222dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_red"
+        android:text="OK"
+        android:textColor="@color/white"
+        android:textColorLink="@color/white" />
+</LinearLayout>

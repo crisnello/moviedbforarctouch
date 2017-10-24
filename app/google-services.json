@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "122711147643",
+    "firebase_url": "https://moviedb-for-arctouch.firebaseio.com",
+    "project_id": "moviedb-for-arctouch",
+    "storage_bucket": "moviedb-for-arctouch.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122711147643:android:bd1aa9ecc19ecb05",
+        "android_client_info": {
+          "package_name": "com.crisnello.moviedb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "122711147643-s9m145splhsb5lh9fcnnajgkdvki8t0a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.crisnello.moviedb",
+            "certificate_hash": "738e68ddecabbe526638725f6e1fc6a1509bde84"
+          }
+        },
+        {
+          "client_id": "122711147643-ieu22d1n3gqb9eu4fl3gaqi682ledmmi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_Ek47-oZaHgD0cU70s3sgA-JU0kLXyyk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "122711147643-ieu22d1n3gqb9eu4fl3gaqi682ledmmi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

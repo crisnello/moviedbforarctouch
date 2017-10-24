@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/StudioProjects/moviedb/app/libs/android-smart-image-view-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d76ea8c3e9a60101244d6d04aff8cc75888570f0">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/2/android-smart-image-view-1.0.0_7b3627b08062fb4accb8c1fb1c3f8188d80865e3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/07b432f9718892631b215f2871bd34b82800e468/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2482bfd874e8b3927f4141105674ad392ff83698">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_594d0a29c25711c0fb6827de96822b09c6139499/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/e8a9d232f231b66d547bb5f5facc79d78c415725/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8c6ef5bd4072f8cda2b89d8356ea7d8acd0683aa">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d80c97a7557fc8f98569d7796f9cd54581af310a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/76a58ede8ede88d0835d3ad7400dc4b89f81de49/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ffe8b28ab61e5ee92ab9431a220379790c71ddf">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f4e02d6be4b493af545d16e25896039faaa7f5c6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_30709d893b13443c009eae9341b6591ee6a07db3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/d28c04cb1f614ee6f020e871f88d04e7ee0e5057/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="82ea5a937ab84229fbd2f3fc8cf2a72cbdf0ee0f">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_41ae4a85a3fdf106c613c2bab13618dfbea75d84/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/StudioProjects/moviedb/app/libs/commons-email-1.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3b3c527990f7f288a3a9b23a8c7307bbf7e75965">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/2/commons-email-1.4_c23fe6519c259eabfd9a293b861f17d79e197bbb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/3f9a3f7146928756b1f5fbb305ba467618ec6511/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1e14ebe1cda8491f152083e752ca5bf73cd37bff">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2309618fb5fb8db67614a27edf6b9f56846364fe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/343c3f03304b206ac3510df956cc73862355933d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ac8365c87591065db07f7bac8551504504832cd4">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6d8271f16d8c9b0c2ac10725bb8ce47dca7e18da/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/ad6acc9d8b0b81e6ce92aba8c80570e29a852791/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bc9ea2bc291bbebc83f5b160d115c699bddc4e16">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_093cb87f28082e9a57c9d88a169ab20f90100db6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/6bc055bd6fa966cd71ca932d36b72026d9647f70/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="eccaaa9ffa6bb4bfbd2e870f01aaf69655d353be">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6b6b8856709ea20cb1aef518dae8dd2ae440bb14/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/44e46a4d6f91bfaf78ba10aabd8226949f0fceaf/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0d394688dd7030b83dea8eed3fa483410c24afe0">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c6bf41261abf680afe6a6f2ac9c02c945b52d4cf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/5d5316a36fe68de08c488136074e34e97178b81e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="53e8932b1ac8c7dfc35cfeda1f9efbc9822ceaf3">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_647dc887833aa1fd73725fa3489529cc08adf246/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/cebbdfe27d9b324511e6537eefe1289a009fc7eb/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="252896ce41f2a84a2849e29235e66098be7d12ee">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_18848ab3022c551acfc033a6b4c0cc9dfea13760/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/77c481a567edf8ad473c75f396b55d3c96bcd6bb/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="77558e74bb2056ef38516296f13a27c4c4fc3e5c">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d48d3779237923c9d3663edc36494e7b0b89c4cb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/StudioProjects/moviedb/app/libs/gson-2.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/2/gson-2.8.0_fd78e603d75d48b5b927d1c5d2af730472708e28/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="cf3328b9ad146325050ecf02683bad817992bbcb">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_75e0de337e669c98ef5c5714709141f682bdcddc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/2034216c0f91792e5d233ba7fcac5484eafe8f50/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0efd1b44f47c134fb245914a1d54a55adbfc2f8d">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c77643f13ae564fc2a2f311eb96f5ad4ddd56278/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/c2fbf877dbf771b9f6e20e9e1e2acd3b630ada71/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="159494eb362396d073d8c922b77e40c0da5fc5bc">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f385292ab92515934b03202fb137fc16c3951baf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/ecc02f3982c3e7dd914ca41f0da9b1f325a56528/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a1c351dc10b92d638da57f3a6513f87cfbdc9f83">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_10a2569803620d31532390bc756df79697f1f21e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/69789301b1bfb3607441bb6c2d4e8e7a21ec33f9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1ef72e72bc0d05602c366582afa9439f58bb31d6">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bb127ab35038ad081b1e01c142a08c7bb99edcf5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/bdd4dad92c3999a8efb59c2fc4efea7bb1f28602/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2a18547ea91d258866d132c2a763185f15b01b25">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a55359e96911d3500913ea0ae875c2bdf0554e78/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/ee5c715da013a9ecfe59cb4bc93286c42a64f7d3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b75ecdd04a37d31b4a0da2729fc5c558962a529b">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f1bb9fef7c27edd8c20ce7657e2531067631574d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/a10e0dcf9ac4a3bfbcc290cca6cced12180e163b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a36600281a648769411ef642c331851732bf29e">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a38632d87213bafafc608aa62e6bea8c17940c70/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/619fe95556a0d308459b4de69e99595aecdf1cda/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b8b26b28aae0ba8e2db55ad9fe0ebc770530c5ef">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8f86f5dfebc052762bccc8415ef2b3e32985636f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/ba87ae2d4054c8a3602ce60cd47e51f56a3e4e0c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9a0c96cb2e74d3a6e692d920c9e03326e77f6429">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_834fc6c26575b6b35dcea48725a1303c4b19197b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/b370aa69127eeb38ff6799bf8919b4f8d66e5b06/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="af7582c6b327449c6d32518e6a10307860b7b5d6">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a5cf928eacdee379218730ba7deb7b2560a988a2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/crisnello/.android/build-cache/75bc420444fa2da13194a52a271f51941f505a64/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="80dd8bea08bc5fe10b10a3243b8279c856ccc690">
+        <dex dex="/Users/crisnello/StudioProjects/moviedb/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6b0891f202d34cf5e59eb0453877fc72e322383f/classes.dex" />
+    </item>
+
+</items>
