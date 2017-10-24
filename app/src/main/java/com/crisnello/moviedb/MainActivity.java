@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -72,16 +73,43 @@ public class MainActivity extends AppCompatActivity
 
     private StorageReference storageProfile;
 
+    private Button btn_prev;
+    private Button btn_next;
+
     private int page ;
+
+    private int total_pages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 //        Log.e(TAG,"onCreate");
+
+        btn_prev = (Button) findViewById(R.id.btn_voltar);
+        btn_prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(page > 1){
+                    page = page - 1;
+                }
+                updateMovies();
+            }
+        });
+
+        btn_next = (Button) findViewById(R.id.btn_proximo);
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(page < total_pages){
+                    page = page + 1;
+                }
+                updateMovies();
+            }
+        });
 
         myUtil = new Util(MainActivity.this);
 
@@ -212,7 +240,7 @@ public class MainActivity extends AppCompatActivity
                 try {
                     JSONObject jsonObject = new JSONObject(respJson);
                     JSONArray results = jsonObject.getJSONArray("results");
-
+                    total_pages = jsonObject.getInt("total_pages");
                     movies = new Gson().fromJson(results.toString(),  new TypeToken<ArrayList<Movie>>(){}.getType());
 
                 }catch(JSONException jsone){
