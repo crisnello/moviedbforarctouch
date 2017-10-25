@@ -229,6 +229,7 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
                         layoutLogado();
                         goToMenu();
                     } else {
+                        showProgress(true);
                         facebookUserId = PreferencesUtil.getPref(PreferencesUtil.FACEBOOKID, getApplicationContext());
                         if (facebookUserId != null)
                             goToCriarConta();
@@ -249,7 +250,6 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                     FirebaseUser user = firebaseAuth.getCurrentUser();
                     if (user != null) {
-                        showProgress(true);
 //                    Log.e(TAG, "onAuthStateChanged:signed_in:" + user.getUid() + " ProviderId:" + user.getProviderId());
                         userFirebaseLogado = true;
                         pEmail = user.getEmail();
@@ -377,7 +377,7 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
                             usuario.setId(firebaseUser.getUid());
                             usuario.setEmail(firebaseUser.getEmail());
                             usuario.setNome(firebaseUser.getDisplayName());
-
+//                            showProgress(true);
                             MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario)).child(firebaseUser.getUid()).addListenerForSingleValueEvent(oneTime);
                         }
                     }
