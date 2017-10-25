@@ -28,10 +28,8 @@ public class Internet
     public static String postHttpEntity(String url, MyHttpEntity entity)
     {
         String result="";
-       // url= Config.WS_BASE_URL+Config.WS_PATH_URL+url+".php";
         BufferedReader bufferedReader = null;
         Log.d("PostHttpEntity",url);
-
 
         try{
             URL obj = new URL(url);
@@ -50,7 +48,6 @@ public class Internet
             entity.writeTo(conn.getOutputStream());
             os.close();
             conn.connect();
-
 
             //HttpResponse response = httpclient.execute(httppost);
 
@@ -77,10 +74,42 @@ public class Internet
         return result;
     }
 
+    public static String getHttpUrlConnectionAction(String desiredUrl)
+            throws Exception {
+        URL url = null;
+        BufferedReader reader = null;
+        StringBuilder stringBuilder;
+        try {
+            url = new URL(desiredUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setReadTimeout(15 * 1000);
+            connection.connect();
+            reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            stringBuilder = new StringBuilder();
+
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                stringBuilder.append(line + "\n");
+            }
+            return stringBuilder.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                }
+            }
+        }
+    }
+
     public static String postHttp(String url, HashMap<String,String> map) {
         String result = "";
 
-        //url = Config.WS_BASE_URL + Config.WS_PATH_URL + url + ".php";
         Log.e("URL: ", url);
         BufferedReader bufferedReader = null;
         HttpURLConnection con = null;
@@ -93,7 +122,8 @@ public class Internet
 
             //con.setDefaultHostnameVerifier(hostnameVerifier);
 
-            con.setRequestMethod("POST");
+                con.setRequestMethod("POST");
+
             con.setRequestProperty("User-Agent", "android");
             con.setRequestProperty("Accept-Language", "UTF-8");
 
@@ -128,7 +158,7 @@ public class Internet
                 stringBuffer.append(line + NL);
             }
             bufferedReader.close();
-            //Log.e("POST HTTP RETORNO", stringBuffer.toString());
+            Log.e("POST HTTP RETORNO", stringBuffer.toString());
 
             result = stringBuffer.toString();
             return result;

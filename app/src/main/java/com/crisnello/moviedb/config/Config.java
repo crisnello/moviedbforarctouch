@@ -24,6 +24,9 @@ package com.crisnello.moviedb.config;
 
             public final static String WS_URL_MOVIE_UPCOMING = "https://api.themoviedb.org/3/movie/upcoming";
 
+            public final static String WS_URL_MOVIE_GENRE = "https://api.themoviedb.org/3/genre/movie/list";
+
+
             public final static String WS_FILE_PATH="system/file/";
 
             public final static String WS_PROFILE_PICTURE_SIZE="cadastro/200x200/";

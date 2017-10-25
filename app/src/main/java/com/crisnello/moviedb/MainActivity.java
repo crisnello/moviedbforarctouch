@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 import com.crisnello.moviedb.config.Config;
 import com.crisnello.moviedb.dao.MoviedbFirebase;
+import com.crisnello.moviedb.entitie.Genre;
 import com.crisnello.moviedb.entitie.Movie;
 import com.crisnello.moviedb.entitie.Usuario;
 import com.crisnello.moviedb.util.AdapterListView;
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity
 
     private ArrayList<Movie> movies = new ArrayList<Movie>();
 
+    private ArrayList<Genre> genres = new ArrayList<Genre>();
+
     private SmartImageView smartImage;
     private String faceId;
     private View mProgress;
@@ -77,8 +80,9 @@ public class MainActivity extends AppCompatActivity
     private Button btn_next;
 
     private int page ;
-
     private int total_pages;
+
+    private TextView txtPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +93,8 @@ public class MainActivity extends AppCompatActivity
 
 //        Log.e(TAG,"onCreate");
 
+        txtPage = (TextView) findViewById(R.id.txt_page);
+
         btn_prev = (Button) findViewById(R.id.btn_voltar);
         btn_prev.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +102,7 @@ public class MainActivity extends AppCompatActivity
                 if(page > 1){
                     page = page - 1;
                 }
+                txtPage.setText(String.valueOf(page));
                 updateMovies();
             }
         });
@@ -107,6 +114,7 @@ public class MainActivity extends AppCompatActivity
                 if(page < total_pages){
                     page = page + 1;
                 }
+                txtPage.setText(String.valueOf(page));
                 updateMovies();
             }
         });
@@ -192,7 +200,7 @@ public class MainActivity extends AppCompatActivity
         try {
 
             String img_path = getString(R.string.ref_from_url) + getString(R.string.dir_img_profile) + user.getId() + getString(R.string.img_extension);
-            Log.e(TAG,"IMG Path : "+img_path);
+//            Log.e(TAG,"IMG Path : "+img_path);
 
             storageProfile = MoviedbFirebase.getStorageFirebase().getReferenceFromUrl(getString(R.string.ref_from_url) + getString(R.string.dir_img_profile) + user.getId() + getString(R.string.img_extension));
             final long ONE_MEGABYTE = 1024 * 1024;
@@ -217,7 +225,39 @@ public class MainActivity extends AppCompatActivity
         }
 
         page = 1;
-        updateMovies();
+        txtPage.setText(String.valueOf(page));
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+//                HashMap<String, String> hash = new HashMap<String, String>();
+//                hash.put("api_key", Config.api_key);
+//                hash.put("language", "pt-BR");
+
+                String respJson = null;
+
+                //                String respJson = Internet.postHttp(Config.WS_URL_MOVIE_GENRE, hash);
+                try {respJson = Internet.getHttpUrlConnectionAction(Config.WS_URL_MOVIE_GENRE+"?api_key="+Config.api_key+"&language=pt-BR");
+                } catch (Exception e) {e.printStackTrace();}
+
+                Log.i("Resp Genres", respJson);
+                try {
+                    JSONObject jsonObject = new JSONObject(respJson);
+                    JSONArray results = jsonObject.getJSONArray("genres");
+                    genres = new Gson().fromJson(results.toString(),  new TypeToken<ArrayList<Genre>>(){}.getType());
+
+//                    for(Genre genre : genres) {
+//                        Log.i(TAG, genre.getId() + " - " + genre.getName());
+//                    }
+                }catch(JSONException jsone){
+                    jsone.printStackTrace();
+                }
+
+                updateMovies();
+            }
+        }).start();
+
+//        updateMovies();
     }
 
 
@@ -235,9 +275,10 @@ public class MainActivity extends AppCompatActivity
                 //20 per page
 
                 String respJson = Internet.postHttp(Config.WS_URL_MOVIE_UPCOMING, hash);
-                Log.i("Resp Movies", respJson);
+//                Log.i("Resp Movies", respJson);
 
                 try {
+
                     JSONObject jsonObject = new JSONObject(respJson);
                     JSONArray results = jsonObject.getJSONArray("results");
                     total_pages = jsonObject.getInt("total_pages");

@@ -24,7 +24,12 @@ public class Movie implements Serializable {
 
     @Override
     public String toString() {
-        return getTitle() + "\n" + getRelease_date();
+        String genres = "";
+        for(Long genre :  getGenre_ids() ){
+            genres = genres + genre.longValue() +" ";
+        }
+
+        return getTitle() + "\n" + getRelease_date() + "\ngênero " + genres;
     }
 
     public long getId() {
