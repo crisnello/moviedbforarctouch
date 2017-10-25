@@ -113,7 +113,6 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
         if (getIntent().getBooleanExtra("EXIT", false)) {
             logout();
         }else {
-
             showProgress(true);
 
 //            facebookUserId = getIntent().getStringExtra("FACEID");
@@ -229,7 +228,6 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
                         layoutLogado();
                         goToMenu();
                     } else {
-                        showProgress(true);
                         facebookUserId = PreferencesUtil.getPref(PreferencesUtil.FACEBOOKID, getApplicationContext());
                         if (facebookUserId != null)
                             goToCriarConta();
@@ -259,9 +257,13 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
 
                         usuario.setId(pId);
                         usuario.setEmail(pEmail);
+                        usuario.setNome(user.getDisplayName());
+
+                        layoutLogado();
+                        goToMenu();
 
                         //autoLogin(pId);
-                        MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario)).child(user.getUid()).addListenerForSingleValueEvent(oneTime);
+//                        MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario)).child(user.getUid()).addListenerForSingleValueEvent(oneTime);
 
                     } else {
 //                    Log.e(TAG, "onAuthStateChanged:signed_out");
@@ -356,6 +358,7 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
     private void handleFacebookAccessToken(AccessToken token) {
 //        Log.d(TAG, "handleFacebookAccessToken:" + token);
         removerAuthListener();
+
         facebookUserId = token.getUserId();
         PreferencesUtil.putPref(PreferencesUtil.FACEBOOKID, facebookUserId, getApplicationContext());
 
