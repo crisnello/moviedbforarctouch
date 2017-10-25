@@ -72,5 +72,7 @@
 
     <string name="dir_img_profile">profile/</string>
 
+    <string name="language">pt-BR</string>
+
 
 </resources>

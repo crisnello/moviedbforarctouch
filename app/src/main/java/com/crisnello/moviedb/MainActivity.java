@@ -244,13 +244,8 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void run() {
 
-//                HashMap<String, String> hash = new HashMap<String, String>();
-//                hash.put("api_key", Config.api_key);
-//                hash.put("language", "pt-BR");
-
                 String respJson = null;
 
-                //                String respJson = Internet.postHttp(Config.WS_URL_MOVIE_GENRE, hash);
                 try {respJson = Internet.getHttpUrlConnectionAction(Config.WS_URL_MOVIE_GENRE+"?api_key="+Config.api_key+"&language=pt-BR");
                 } catch (Exception e) {e.printStackTrace();}
 
@@ -271,7 +266,6 @@ public class MainActivity extends AppCompatActivity
             }
         }).start();
 
-//        updateMovies();
     }
 
 
@@ -279,12 +273,11 @@ public class MainActivity extends AppCompatActivity
         new Thread(new Runnable() {
             @Override
             public void run() {
+
                 HashMap<String, String> hash = new HashMap<String, String>();
                 hash.put("api_key", Config.api_key);
-//                hash.put("language", "en-US");
-                hash.put("language", "pt-BR");
+                hash.put("language", getString(R.string.language)); //"en-US", "pt-BR"
                 hash.put("page", String.valueOf(page));
-
                 //page init with 1 until total_pages
                 //20 per page
 
