@@ -1,9 +1,13 @@
 package com.crisnello.moviedb;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -60,6 +64,9 @@ public class MainActivity extends AppCompatActivity
 
     private ArrayList<Genre> genres = new ArrayList<Genre>();
 
+    private View mProgressView;
+    private View mScrollView;
+
     private SmartImageView smartImage;
     private String faceId;
     private View mProgress;
@@ -91,6 +98,11 @@ public class MainActivity extends AppCompatActivity
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        mProgressView = findViewById(R.id.progress);
+        mScrollView = findViewById(R.id.ll_all);
+
+        showProgress(true);
+
 //        Log.e(TAG,"onCreate");
 
         txtPage = (TextView) findViewById(R.id.txt_page);
@@ -99,6 +111,7 @@ public class MainActivity extends AppCompatActivity
         btn_prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showProgress(true);
                 if(page > 1){
                     page = page - 1;
                 }
@@ -111,6 +124,7 @@ public class MainActivity extends AppCompatActivity
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showProgress(true);
                 if(page < total_pages){
                     page = page + 1;
                 }
@@ -298,6 +312,7 @@ public class MainActivity extends AppCompatActivity
                     public void run() {
                         try {
                             createListView();
+                            showProgress(false);
                         }catch(Exception e){
                             e.printStackTrace();
                         }
@@ -319,6 +334,36 @@ public class MainActivity extends AppCompatActivity
     {
         Movie item = adapterListView.getItem(arg2);
 
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+    private void showProgress(final boolean show) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+            int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
+
+            mScrollView.setVisibility(show ? View.GONE : View.VISIBLE);
+            mScrollView.animate().setDuration(shortAnimTime).alpha(
+                    show ? 0 : 1).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    mScrollView.setVisibility(show ? View.GONE : View.VISIBLE);
+                }
+            });
+
+            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            mProgressView.animate().setDuration(shortAnimTime).alpha(
+                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+                }
+            });
+        } else {
+            // The ViewPropertyAnimator APIs are not available, so simply show
+            // and hide the relevant UI components.
+            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            mScrollView.setVisibility(show ? View.GONE : View.VISIBLE);
+        }
     }
 
     @Override

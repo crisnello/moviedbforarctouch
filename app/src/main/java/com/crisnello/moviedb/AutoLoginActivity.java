@@ -68,7 +68,6 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-
     private View mScrollView;
 
     private ImageView sign_in, img_facebook, img_criar;

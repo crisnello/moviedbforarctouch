@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Moviedb</string>
+    <string name="app_name">Moviedb for Arctouch</string>
     <string name="action_settings">Settings</string>
 
     <string name="msg_moviedb">Moviedb Informa</string>
