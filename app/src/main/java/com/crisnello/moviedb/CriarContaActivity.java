@@ -274,7 +274,6 @@ public class CriarContaActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
 //                                myUtil.showToast(getString(R.string.msg_auth_user));
                                 FirebaseUser firebaseUser = task.getResult().getUser();
-
                                 inserirUsuario(firebaseUser.getUid());
                             }else{
 

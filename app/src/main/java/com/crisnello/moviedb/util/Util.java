@@ -4,9 +4,11 @@ import android.content.Context;
 import android.net.Uri;
 import android.widget.Toast;
 
+import com.crisnello.moviedb.entitie.Genre;
 import com.crisnello.moviedb.entitie.Usuario;
 
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 
 
 /**

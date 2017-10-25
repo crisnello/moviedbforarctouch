@@ -310,7 +310,7 @@ public class MainActivity extends AppCompatActivity
 
     private void createListView()
     {
-        adapterListView = new AdapterListView(this, itens);
+        adapterListView = new AdapterListView(this, itens, genres);
         listaDeEventos.setAdapter(adapterListView);
         listaDeEventos.setCacheColorHint(Color.TRANSPARENT);
     }

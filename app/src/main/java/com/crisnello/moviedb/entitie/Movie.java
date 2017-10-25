@@ -16,7 +16,7 @@ public class Movie implements Serializable {
 
     private String poster_path;
 
-    private long[] genre_ids;
+    private int[] genre_ids;
 
     private String backdrop_path;
 
@@ -24,12 +24,8 @@ public class Movie implements Serializable {
 
     @Override
     public String toString() {
-        String genres = "";
-        for(Long genre :  getGenre_ids() ){
-            genres = genres + genre.longValue() +" ";
-        }
 
-        return getTitle() + "\n" + getRelease_date() + "\ngênero " + genres;
+        return getTitle() + "\n" + getRelease_date();
     }
 
     public long getId() {
@@ -64,11 +60,11 @@ public class Movie implements Serializable {
         this.poster_path = poster_path;
     }
 
-    public long[] getGenre_ids() {
+    public int[] getGenre_ids() {
         return genre_ids;
     }
 
-    public void setGenre_ids(long[] genre_ids) {
+    public void setGenre_ids(int[] genre_ids) {
         this.genre_ids = genre_ids;
     }
 

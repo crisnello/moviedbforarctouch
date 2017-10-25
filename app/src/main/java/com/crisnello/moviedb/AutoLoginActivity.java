@@ -116,7 +116,7 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
 
             showProgress(true);
 
-            facebookUserId = getIntent().getStringExtra("FACEID");
+//            facebookUserId = getIntent().getStringExtra("FACEID");
 //            FacebookSdk.sdkInitialize(getApplicationContext());
 //            AppEventsLogger.activateApp(this);
 

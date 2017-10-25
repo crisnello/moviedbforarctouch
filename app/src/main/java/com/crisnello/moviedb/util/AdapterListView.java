@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.crisnello.moviedb.R;
 import com.crisnello.moviedb.config.Config;
+import com.crisnello.moviedb.entitie.Genre;
 import com.crisnello.moviedb.entitie.Movie;
 import com.loopj.android.image.SmartImageView;
 
@@ -20,14 +21,26 @@ public class AdapterListView extends BaseAdapter
     private LayoutInflater mInflater;
     private ArrayList<Movie> itens;
 
-    public AdapterListView(Context context, ArrayList<Movie> itens)
+    private ArrayList<Genre> genres;
+
+    public AdapterListView(Context context, ArrayList<Movie> itens, ArrayList<Genre> genres)
     {
+        this.genres = genres;
+
         //Itens que preencheram o listview
         this.itens = itens;
         //responsavel por pegar o Layout do item.
         mInflater = LayoutInflater.from(context);
     }
 
+    public String getGenreById(ArrayList<Genre> genres, int id){
+
+        for(Genre genre : genres){
+            if(genre.getId() == id)
+                return genre.getName();
+        }
+        return "";
+    }
 
     public int getCount()
     {
@@ -53,10 +66,14 @@ public class AdapterListView extends BaseAdapter
 
         view = mInflater.inflate(R.layout.movie_listview, null);
 
-        ((TextView) view.findViewById(R.id.text)).setText(item.toString());
+        String generos = "";
+        for(Integer genre :  item.getGenre_ids() ){
+            generos = generos + getGenreById(this.genres,genre.intValue()) +" ";
+        }
+
+        ((TextView) view.findViewById(R.id.text)).setText(item.toString() + "\n" + generos);
 
         ((SmartImageView) view.findViewById(R.id.img_movie)).setImageUrl(Config.WS_URL_IMG_PATH+item.getPoster_path());
-
 
         return view;
     }
