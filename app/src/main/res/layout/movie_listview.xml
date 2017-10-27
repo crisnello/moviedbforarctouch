@@ -22,7 +22,7 @@
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/text"
             android:background="@color/color1"
-            app:srcCompat="@drawable/ic_laucher" />
+            app:srcCompat="@drawable/ic_laucher_orig" />
 
         <TextView
             android:id="@+id/text"
