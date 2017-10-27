@@ -113,8 +113,8 @@ public class CriarContaActivity extends AppCompatActivity {
     private String cEmail;
     private  String cFone;
     private  String cSexo;
-    private  String cData ;
-    private  String cFacul;
+//    private  String cData ;
+//    private  String cFacul;
     private  String cSenha;
     private String cRepitaSenha ;
 
@@ -128,7 +128,8 @@ public class CriarContaActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int item) {
                 edtSexo.setText(items[item]);
-                edtData.requestFocus();
+//                edtData.requestFocus();
+                edtSenha.requestFocus();
                 dialog.dismiss();
 
             }
@@ -162,8 +163,8 @@ public class CriarContaActivity extends AppCompatActivity {
         edtNome = (EditText) findViewById(R.id.cad_nome);
         edtEmail = (EditText) findViewById(R.id.cad_email);
         edtFone = (EditText) findViewById(R.id.cad_fone);
-        edtData = (EditText) findViewById(R.id.cad_data);
-        edtFacul = (EditText) findViewById(R.id.cad_facu);
+//        edtData = (EditText) findViewById(R.id.cad_data);
+//        edtFacul = (EditText) findViewById(R.id.cad_facu);
         edtSenha = (EditText) findViewById(R.id.cad_senha);
         edtRepitaSenha = (EditText) findViewById(R.id.cad_repitasenha);
 
@@ -181,8 +182,8 @@ public class CriarContaActivity extends AppCompatActivity {
                 cEmail = edtEmail.getText().toString();
                 cFone = edtFone.getText().toString();
                 cSexo = edtSexo.getText().toString();
-                cData = edtData.getText().toString();
-                cFacul = edtFacul.getText().toString();
+//                cData = edtData.getText().toString();
+//                cFacul = edtFacul.getText().toString();
                 cSenha = edtSenha.getText().toString();
                 cRepitaSenha = edtRepitaSenha.getText().toString();
 
@@ -220,19 +221,19 @@ public class CriarContaActivity extends AppCompatActivity {
                     cancel = true;
                 }
 
-                if(!TextUtils.isEmpty(cData)){
-                    try{
-                        Date pDate = sdfBr.parse(cData);
-                    }catch(Exception e){
-                        edtData.setError(getString(R.string.error_invalid_date));
-                        focusView = edtData;
-                        cancel = true;
-                    }
-                }else{
-                    edtData.setError(getString(R.string.error_invalid_date));
-                    focusView = edtData;
-                    cancel = true;
-                }
+//                if(!TextUtils.isEmpty(cData)){
+//                    try{
+//                        Date pDate = sdfBr.parse(cData);
+//                    }catch(Exception e){
+//                        edtData.setError(getString(R.string.error_invalid_date));
+//                        focusView = edtData;
+//                        cancel = true;
+//                    }
+//                }else{
+//                    edtData.setError(getString(R.string.error_invalid_date));
+//                    focusView = edtData;
+//                    cancel = true;
+//                }
 
                 if(TextUtils.isEmpty(cSexo)){
                     edtSexo.setError(getString(R.string.error_invalid_sexo));
@@ -373,9 +374,10 @@ public class CriarContaActivity extends AppCompatActivity {
         usuario.setEmail(cEmail);
         usuario.setNome(cNome);
         //usuario.setSenha(cSenha);
-        usuario.setData(cData);
+//        usuario.setData(cData);
+//        usuario.setFacul(cFacul);
         usuario.setTelefone(cFone);
-        usuario.setFacul(cFacul);
+
         usuario.setSexo(cSexo);
 
         //Salvando dados do usuário

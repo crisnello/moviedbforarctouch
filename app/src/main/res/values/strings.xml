@@ -28,7 +28,7 @@
     <string name="error_incorrect_password">Senha ou Email está incorreto</string>
     <string name="error_incorrect_password_or_user">Usuário ou senha inválido.</string>
 
-    <string name="error_user_notexist">Usuário não existe em Firebase .</string>
+    <string name="error_user_notexist">Usuário não existe em Firebase crisnello.com </string>
 
     <string name="error_incorrect_credential">Este email foi criado com o Facebook, para utiliza-lo com senha, utilize o esqueci minha senha para setar a credencial correta!</string>
     <string name="error_small_credential">Use o Facebook ou troque para senha utilizando esqueci minha senha</string>
@@ -38,7 +38,7 @@
     <string name="error_field_required">Campo obrigatório</string>
     <string name="error_invalid_date">Data de nascimento inválida</string>
 
-    <string name="error_collision_user">Esse email já está cadastrado no Firebase.</string>
+    <string name="error_collision_user">Esse email já está cadastrado no Firebase crisnello.com</string>
     <string name="error_duplicate_user">Esse email já existe.</string>
 
     <string name="msg_auth_user">Autenticação criada.</string>

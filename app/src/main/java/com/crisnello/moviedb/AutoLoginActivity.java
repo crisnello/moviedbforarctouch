@@ -5,10 +5,13 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
@@ -100,6 +103,7 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto_login);
+
 
         Log.e(TAG,"onCreate");
 
@@ -335,10 +339,10 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
         super.onPause();
         Log.e(TAG, "onPause Removendo Listener de Autenticação e Verificação se usuario existe");
         removerAuthListener();
-        try {
-            MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario)).child(usuario.getId()).removeEventListener(oneTime);}
-        catch(Exception e){//Log.e(TAG,e.getMessage(),e);
-        }
+//        try {
+//            MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario)).child(usuario.getId()).removeEventListener(oneTime);}
+//        catch(Exception e){//Log.e(TAG,e.getMessage(),e);
+//        }
     }
 
     public void goToEsqueciMinhaSenha() {
@@ -538,11 +542,11 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
 //            disconnectFromFacebook();
             finish();
         }else{
-            try {
-                authFirebase.addAuthStateListener(mAuthListener);
-            }catch(Exception e){
-                e.printStackTrace();
-            }
+//            try {
+//                authFirebase.addAuthStateListener(mAuthListener);
+//            }catch(Exception e){
+//                e.printStackTrace();
+//            }
         }
     }
 
