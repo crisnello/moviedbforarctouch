@@ -46,9 +46,9 @@ public class DetalheMovieActivity extends AppCompatActivity {
 
 
         String strShow = movie.getTitle()+
-                "\n"+movie_genres+"\n"+
+                "\n\n"+movie_genres+"\n\n"+
                 movie.getRelease_date()+
-                "\n"+
+                "\n\n"+
                 movie.getOverview();
 
         txt_movie_detalhe.setText(strShow);
