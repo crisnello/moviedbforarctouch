@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity
 
     private TextView txtPage;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -326,6 +327,17 @@ public class MainActivity extends AppCompatActivity
     public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3)
     {
         Movie item = adapterListView.getItem(arg2);
+
+        String generos = "";
+        for(Integer genre :  item.getGenre_ids() ){
+            generos = generos + myUtil.getGenreById(this.genres,genre.intValue()) +" ";
+        }
+
+        Intent intent = new Intent(MainActivity.this, DetalheMovieActivity.class);
+        intent.putExtra("MOVIE", item);
+        intent.putExtra("MOVIE_GENRES", generos);
+        startActivity(intent);
+
 
     }
 

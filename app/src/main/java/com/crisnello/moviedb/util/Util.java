@@ -24,6 +24,15 @@ public class Util {
 
     }
 
+    public  String getGenreById(ArrayList<Genre> genres, int id){
+
+        for(Genre genre : genres){
+            if(genre.getId() == id)
+                return genre.getName();
+        }
+        return "";
+    }
+
     public void showToast(String pMsg){
         Toast.makeText(context, pMsg, Toast.LENGTH_LONG).show();
     }

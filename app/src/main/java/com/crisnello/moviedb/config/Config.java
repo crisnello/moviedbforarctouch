@@ -20,6 +20,8 @@ package com.crisnello.moviedb.config;
 
             public final static String WS_URL_IMG_PATH = "https://image.tmdb.org/t/p/w185_and_h278_bestv2";
 
+            public final static String WS_URL_IMG_PATH_600_900 = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/";
+
             public final static String WS_BASE_URL = "http://themoviedb.org/";
 
             public final static String WS_URL_MOVIE_UPCOMING = "https://api.themoviedb.org/3/movie/upcoming";

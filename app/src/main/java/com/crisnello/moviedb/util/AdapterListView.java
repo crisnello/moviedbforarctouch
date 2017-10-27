@@ -23,6 +23,8 @@ public class AdapterListView extends BaseAdapter
 
     private ArrayList<Genre> genres;
 
+    private Context context;
+
     public AdapterListView(Context context, ArrayList<Movie> itens, ArrayList<Genre> genres)
     {
         this.genres = genres;
@@ -31,16 +33,10 @@ public class AdapterListView extends BaseAdapter
         this.itens = itens;
         //responsavel por pegar o Layout do item.
         mInflater = LayoutInflater.from(context);
+
+        this.context = context;
     }
 
-    public String getGenreById(ArrayList<Genre> genres, int id){
-
-        for(Genre genre : genres){
-            if(genre.getId() == id)
-                return genre.getName();
-        }
-        return "";
-    }
 
     public int getCount()
     {
@@ -66,9 +62,11 @@ public class AdapterListView extends BaseAdapter
 
         view = mInflater.inflate(R.layout.movie_listview, null);
 
+        Util util = new Util(context);
+
         String generos = "";
         for(Integer genre :  item.getGenre_ids() ){
-            generos = generos + getGenreById(this.genres,genre.intValue()) +" ";
+            generos = generos + util.getGenreById(this.genres,genre.intValue()) +" ";
         }
 
         ((TextView) view.findViewById(R.id.text)).setText(item.toString() + "\n" + generos);

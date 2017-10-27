@@ -22,6 +22,16 @@ public class Movie implements Serializable {
 
     private String release_date;
 
+    private String overview;
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
     @Override
     public String toString() {
 

@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.crisnello.moviedb.SplashScreenActivity"
+            android:name=".SplashScreenActivity"
             android:theme="@style/AppCompat.TelaCheia">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,11 +25,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.crisnello.moviedb.AutoLoginActivity"
+            android:name=".AutoLoginActivity"
             android:label="Login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.crisnello.moviedb.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
 
@@ -54,20 +54,20 @@
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <activity
-            android:name="com.crisnello.moviedb.EsqueciMinhaSenhaActivity"
+            android:name=".EsqueciMinhaSenhaActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.crisnello.moviedb.CriarContaActivity"
+            android:name=".CriarContaActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <service android:name="com.crisnello.moviedb.service.MoviedbFirebaseMessagingService">
+        <service android:name=".service.MoviedbFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-
-        <activity android:name="com.crisnello.moviedb.MostrarNotificationActivity"></activity>
+        <activity android:name=".MostrarNotificationActivity" />
+        <activity android:name=".DetalheMovieActivity"></activity>
     </application>
 
 </manifest>

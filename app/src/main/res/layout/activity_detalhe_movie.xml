@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.crisnello.moviedb.DetalheMovieActivity"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ScrollView
+        android:id="@+id/scroll_login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.36"
+            android:background="@color/color2">
+
+
+            <com.loopj.android.image.SmartImageView
+                android:id="@+id/img_movie_detalhe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.36"
+                app:srcCompat="@drawable/ic_laucher" />
+
+            <TextView
+                android:id="@+id/txt_movie_detalhe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignEnd="@+id/img_movie_detalhe"
+                android:layout_alignLeft="@+id/img_movie_detalhe"
+                android:layout_alignRight="@+id/img_movie_detalhe"
+                android:layout_alignStart="@+id/img_movie_detalhe"
+                android:layout_below="@+id/img_movie_detalhe"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:text="..."
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/img_movie_detalhe"
+                android:layout_alignStart="@+id/img_movie_detalhe"
+                android:layout_alignTop="@+id/img_movie_detalhe"
+                app:srcCompat="@drawable/ic_back" />
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>
