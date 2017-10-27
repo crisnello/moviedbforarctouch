@@ -52,6 +52,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -155,17 +156,6 @@ public class MainActivity extends AppCompatActivity
         listaDeEventos = (ListView) findViewById(R.id.lista);
         listaDeEventos.setOnItemClickListener(this);
 
-//        faceId = getIntent().getStringExtra("FACEID");
-//        try {
-//            //Log.e("MinActivity","onCreate USER_ID FACEBOOK "+faceId);
-//            if(faceId != null && !faceId.isEmpty()) {
-//                String fotoFaceURL = myUtil.recuperaFotoPerfilFacebook(faceId);
-//                smartImage.setImageUrl(fotoFaceURL);
-//            }
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-
         refUsuario = MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario));
 
 
@@ -211,32 +201,41 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-
+        faceId = getIntent().getStringExtra("FACEID");
         try {
-
-            String img_path = getString(R.string.ref_from_url) + getString(R.string.dir_img_profile) + user.getId() + getString(R.string.img_extension);
-//            Log.e(TAG,"IMG Path : "+img_path);
-
-            storageProfile = MoviedbFirebase.getStorageFirebase().getReferenceFromUrl(getString(R.string.ref_from_url) + getString(R.string.dir_img_profile) + user.getId() + getString(R.string.img_extension));
-            final long ONE_MEGABYTE = 1024 * 1024;
-            storageProfile.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-                @Override
-                public void onSuccess(byte[] bytes) {
-                    //Log.e(TAG,"storageProfile.onSuccess");
-                    Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                    smartImage.setImageBitmap(bmp);
-
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception exception) {
-                    // Handle any errors
-                    Log.e(TAG, "storageProfile.onFailure " + exception.getMessage());
-                exception.printStackTrace();
-                }
-            });
-        }catch (Exception e){
+            //Log.e("MinActivity","onCreate USER_ID FACEBOOK "+faceId);
+            if(faceId != null && !faceId.isEmpty()) {
+                String fotoFaceURL = myUtil.recuperaFotoPerfilFacebook(faceId);
+                smartImage.setImageUrl(fotoFaceURL);
+            }
+        } catch (MalformedURLException e) {
             e.printStackTrace();
+        }
+        if(faceId == null || faceId.isEmpty()) {
+            try {
+                String img_path = getString(R.string.ref_from_url) + getString(R.string.dir_img_profile) + user.getId() + getString(R.string.img_extension);
+//            Log.e(TAG,"IMG Path : "+img_path);
+                storageProfile = MoviedbFirebase.getStorageFirebase().getReferenceFromUrl(getString(R.string.ref_from_url) + getString(R.string.dir_img_profile) + user.getId() + getString(R.string.img_extension));
+                final long ONE_MEGABYTE = 1024 * 1024;
+                storageProfile.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                    @Override
+                    public void onSuccess(byte[] bytes) {
+                        //Log.e(TAG,"storageProfile.onSuccess");
+                        Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                        smartImage.setImageBitmap(bmp);
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle any errors
+                        Log.e(TAG, "storageProfile.onFailure " + exception.getMessage());
+                        exception.printStackTrace();
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         page = 1;

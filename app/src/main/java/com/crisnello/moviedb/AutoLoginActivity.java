@@ -94,13 +94,14 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
 
 
     private ValueEventListener oneTime;
+    private int pFixFirebase = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto_login);
 
-//        Log.e(TAG,"onCreate");
+        Log.e(TAG,"onCreate");
 
         mEmailView = (EditText) findViewById(R.id.email);
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -218,7 +219,11 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
             oneTime = new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
+
                     Usuario myUsuario = dataSnapshot.getValue(Usuario.class);
+
+                    Log.e(TAG, "onDataChange "+myUsuario.getNome());
+
                     if (myUsuario != null) {
                         pNome = myUsuario.getNome();
                         try {
@@ -249,7 +254,7 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                     FirebaseUser user = firebaseAuth.getCurrentUser();
                     if (user != null) {
-//                    Log.e(TAG, "onAuthStateChanged:signed_in:" + user.getUid() + " ProviderId:" + user.getProviderId());
+                    Log.e(TAG, "onAuthStateChanged:signed_in:" + user.getUid() + " ProviderId:" + user.getProviderId());
                         userFirebaseLogado = true;
                         pEmail = user.getEmail();
                         pId = user.getUid();
@@ -260,14 +265,18 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
                         usuario.setEmail(pEmail);
                         usuario.setNome(user.getDisplayName());
 
-//                        layoutLogado();
-//                        goToMenu();
-
+                        //---------------------------------------------------------------------
+                        pFixFirebase += 1; //FIREBASE UNSTABLE FOREVER
+                        if(pFixFirebase == 1) {
+                            layoutLogado();
+                            goToMenu();
+                        }
                         //autoLogin(pId);
-                        MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario)).child(user.getUid()).addListenerForSingleValueEvent(oneTime);
+                        // porq não está sendo chamado....
+                        //MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario)).child(user.getUid()).addListenerForSingleValueEvent(oneTime);
 
                     } else {
-//                    Log.e(TAG, "onAuthStateChanged:signed_out");
+                        Log.e(TAG, "onAuthStateChanged:signed_out");
                         userFirebaseLogado = false;
                         showProgress(false);
                     }
@@ -308,7 +317,7 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
 
     @Override
     public void onStart() {
-//        Log.e(TAG, "onStart");
+        Log.e(TAG, "onStart");
         super.onStart();
         authFirebase.addAuthStateListener(mAuthListener);
 
@@ -324,7 +333,7 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
     @Override
     protected void onPause() {
         super.onPause();
-//        Log.e(TAG, "onPause Removendo Listener de Autenticação e Verificação se usuario existe");
+        Log.e(TAG, "onPause Removendo Listener de Autenticação e Verificação se usuario existe");
         removerAuthListener();
         try {
             MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario)).child(usuario.getId()).removeEventListener(oneTime);}
@@ -382,7 +391,8 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
                             usuario.setEmail(firebaseUser.getEmail());
                             usuario.setNome(firebaseUser.getDisplayName());
 //                            showProgress(true);
-                            MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario)).child(firebaseUser.getUid()).addListenerForSingleValueEvent(oneTime);
+                           // MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario)).child(firebaseUser.getUid()).addListenerForSingleValueEvent(oneTime);
+                            authFirebase.addAuthStateListener(mAuthListener);
                         }
                     }
                 });
@@ -485,7 +495,7 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
         } else {
             try {
 
-                myUtil.showToast("Seja bem vindo " + usuario.getNome());
+//                myUtil.showToast("Seja bem vindo " + usuario.getNome());
                 PreferencesUtil.putPref(PreferencesUtil.ID, usuario.getId(), getApplicationContext());
                 PreferencesUtil.putPref(PreferencesUtil.NOME, usuario.getNome(), getApplicationContext());
                 PreferencesUtil.putPref(PreferencesUtil.EMAIL, usuario.getEmail(), getApplicationContext());
@@ -520,12 +530,19 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
 
     @Override
     protected void onResume() {
+        Log.e(TAG, "onResume");
         super.onResume();
         if (getIntent().getBooleanExtra("EXIT", false)) {
             if (authFirebase != null)
                 authFirebase.signOut();
 //            disconnectFromFacebook();
             finish();
+        }else{
+            try {
+                authFirebase.addAuthStateListener(mAuthListener);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
         }
     }
 
