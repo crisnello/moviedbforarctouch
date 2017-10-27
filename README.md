@@ -1,5 +1,7 @@
 # Moviedb For Arctouch
 
+Depending on the speed of the internet, movie images may take a few thousandths of a second
+
 Basically I used
 Facebook libraries, firebase, apache, apache mail.
 
