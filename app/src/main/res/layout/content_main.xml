@@ -35,7 +35,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryDarkOld">
 
             <Button
                 android:id="@+id/btn_voltar"
@@ -43,13 +44,16 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button"
-                android:textColor="@color/white"
-                android:text="Voltar" />
+                android:text="Voltar"
+                android:textColor="@color/white" />
+
             <TextView
                 android:id="@+id/txt_page"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:background="@color/colorPrimaryDarkOld"
+                android:text=""
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn_proximo"
@@ -57,8 +61,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button"
-                android:textColor="@color/white"
-                android:text="Próximo" />
+                android:text="Próximo"
+                android:textColor="@color/white" />
 
         </LinearLayout>
     </LinearLayout>
