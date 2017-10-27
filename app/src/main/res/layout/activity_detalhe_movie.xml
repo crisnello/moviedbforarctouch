@@ -11,19 +11,19 @@
     <ScrollView
         android:id="@+id/scroll_login_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/color2">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.36"
             android:background="@color/color2">
 
 
             <com.loopj.android.image.SmartImageView
                 android:id="@+id/img_movie_detalhe"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"

@@ -23,6 +23,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -84,7 +85,8 @@ public class CriarContaActivity extends AppCompatActivity {
     private Uri picUri;
     private File file;
 
-    private ImageView img_cad_facebook, img_cadastrar;
+    private Button btn_cadastrar;
+    private ImageView img_cad_facebook;
     private EditText edtNome, edtEmail, edtFone, edtData, edtFacul, edtSenha, edtRepitaSenha;
 
     private FirebaseAuth authFirebase;
@@ -167,8 +169,8 @@ public class CriarContaActivity extends AppCompatActivity {
 
         smartImageCad = (SmartImageView) findViewById(R.id.si_upload);
 
-        img_cadastrar = (ImageView) findViewById(R.id.img_cadastrar);
-        img_cadastrar.setOnClickListener(new View.OnClickListener() {
+        btn_cadastrar = (Button) findViewById(R.id.btn_cadastrar);
+        btn_cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

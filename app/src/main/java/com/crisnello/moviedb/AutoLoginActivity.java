@@ -70,7 +70,9 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
     private View mLoginFormView;
     private View mScrollView;
 
-    private ImageView sign_in, img_facebook, img_criar;
+    private ImageView  img_facebook, img_criar;
+
+    private Button sign_in_entrar;
 
     private TextView txt_forgot;
 
@@ -148,8 +150,8 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
                 }
             });
 
-            sign_in = (ImageView) findViewById(R.id.sign_in);
-            sign_in.setOnClickListener(new OnClickListener() {
+            sign_in_entrar = (Button) findViewById(R.id.sign_in_entrar);
+            sign_in_entrar.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     attemptLogin();
@@ -258,11 +260,11 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
                         usuario.setEmail(pEmail);
                         usuario.setNome(user.getDisplayName());
 
-                        layoutLogado();
-                        goToMenu();
+//                        layoutLogado();
+//                        goToMenu();
 
                         //autoLogin(pId);
-//                        MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario)).child(user.getUid()).addListenerForSingleValueEvent(oneTime);
+                        MoviedbFirebase.getDatabase().getReference(getString(R.string.usuario)).child(user.getUid()).addListenerForSingleValueEvent(oneTime);
 
                     } else {
 //                    Log.e(TAG, "onAuthStateChanged:signed_out");
@@ -343,7 +345,7 @@ public class AutoLoginActivity extends AppCompatActivity { // implements LoaderC
     private void layoutLogado() {
 
         mPasswordView.setVisibility(View.GONE);
-        sign_in.setVisibility(View.GONE);
+        sign_in_entrar.setVisibility(View.GONE);
         img_facebook.setVisibility(View.GONE);
         img_criar.setVisibility(View.GONE);
         txt_forgot.setVisibility(View.GONE);
